@@ -5,13 +5,17 @@ public class PerpetuumMobile implements Zavodnik
 
     }
 
-    public void splnJednoKoloZavodu(double kolkoKilometrov)
+    public boolean splnJednoKoloZavodu(double kolkoKilometrov)
     {
-        int chybovost = 30;
+        int chybovost = 10;
 
         if (Math.random() * 100 < chybovost)
         {
-            System.err.println("PERPETUUM SA POKAZIL");
+            System.out.println("PERPETUUM SA POKAZIL");
+            return false;
         }
+
+        System.out.println("PERPETUUM > Kolo prejdene");
+        return true;
     }
 }

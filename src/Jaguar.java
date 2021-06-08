@@ -9,16 +9,20 @@ public class Jaguar implements Zavodnik
         this.spotrebaNaSto = 7.3;
     }
 
-    public void splnJednoKoloZavodu(double kolkoKilometrov)
+    public boolean splnJednoKoloZavodu(double kolkoKilometrov)
     {
         this.palivoVNadrzi  -= (kolkoKilometrov/100) * this.spotrebaNaSto;
 
-        int chybovost = 12;
+        int chybovost = 5;
 
         if (Math.random() * 100 < chybovost)
         {
-            System.err.println("JAGUAR SA POKAZIL");
+            System.out.println("JAGUAR SA POKAZIL");
+            return false;
         }
+
+        System.out.println("JAGUAR > Kolo prejdene");
+        return true;
     }
 
 }

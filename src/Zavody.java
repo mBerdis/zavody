@@ -9,13 +9,29 @@ public class Zavody
     boolean zavodnik3MozeIstDalej;
 
 
-    public void usporiadajZavody(Zavodnik zavodnik1, Zavodnik zavodnik2, Zavodnik zavodnik3)
+    public void usporiadajZavody()
     {
-        zavodnik1.pripravSa();
-        zavodnik2.pripravSa();
-        zavodnik3.pripravSa();
+        pripravit();
+        double dlzkaKola = 15;
 
-
+        while (zavodnik1MozeIstDalej || zavodnik2MozeIstDalej || zavodnik3MozeIstDalej)
+        {
+            if (zavodnik1MozeIstDalej) zavodnik1MozeIstDalej = jaguar.splnJednoKoloZavodu(dlzkaKola);
+            if (zavodnik2MozeIstDalej) zavodnik2MozeIstDalej = skoda.splnJednoKoloZavodu(dlzkaKola);
+            if (zavodnik3MozeIstDalej) zavodnik3MozeIstDalej = perpetuum.splnJednoKoloZavodu(dlzkaKola);
+        }
 
     }
+
+    public void pripravit()
+    {
+        jaguar.pripravSa();
+        skoda.pripravSa();
+        perpetuum.pripravSa();
+
+        zavodnik1MozeIstDalej = true;
+        zavodnik2MozeIstDalej = true;
+        zavodnik3MozeIstDalej = true;
+    }
+
 }

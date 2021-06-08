@@ -9,15 +9,19 @@ public class SkodaOktavia implements Zavodnik
         this.spotrebaNaSto = 7.3;
     }
 
-    public void splnJednoKoloZavodu(double kolkoKilometrov)
+    public boolean splnJednoKoloZavodu(double kolkoKilometrov)
     {
         this.palivoVNadrzi  -= (kolkoKilometrov/100) * this.spotrebaNaSto;
 
-        int chybovost = 8;
+        int chybovost = 6;
 
         if (Math.random() * 100 < chybovost)
         {
-            System.err.println("SKODA SA POKAZILA");
+            System.out.println("SKODA SA POKAZILA");
+            return false;
         }
+
+        System.out.println("SKODA > Kolo prejdene");
+        return true;
     }
 }
