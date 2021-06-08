@@ -1,5 +1,5 @@
 public interface Zavodnik
 {
-    public void pripravSa();
-    public void splnJednoKoloZavodu(double kolkoKilometrov);
+    public void Zavodnik();
+    public Boolean splnJednoKoloZavodu(double kolkoKilometrov);
 }
